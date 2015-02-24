@@ -4,7 +4,10 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
-    clean: ['public'],
+    clean: {
+      temp: ['.tmp'],
+      dist: ['public']
+    },
     autoprefixer: {
       options: {
         browsers: ['last 2 versions']
@@ -57,6 +60,16 @@ module.exports = function (grunt) {
         files: {
           'public/css/main.css': 'app/styles/main.scss'
         }
+      }
+    },
+    usemin: {
+      html: ['public/**/*.html']
+    },
+    useminPrepare: {
+      html: ['public/index.html'],
+      options: {
+        dest: 'public',
+        root: 'app'
       }
     },
     watch: {
