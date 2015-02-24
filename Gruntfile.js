@@ -1,9 +1,9 @@
 'use strict';
 
-module.exports = function(grunt) {
-   require('load-grunt-tasks')(grunt);
+module.exports = function (grunt) {
+  require('load-grunt-tasks')(grunt);
 
-   grunt.initConfig({
+  grunt.initConfig({
     clean: ['public'],
     copy: {
       main: {
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     },
     jade: {
       compile: {
-      files: [{expand:true, cwd: 'app/', src: ['**/*.jade', '!**/_*.jade'], dest: 'public/', ext: '.html'}]
+        files: [{expand: true, cwd: 'app/', src: ['**/*.jade', '!**/_*.jade'], dest: 'public/', ext: '.html'}]
       }
     },
     sass: {
@@ -29,5 +29,6 @@ module.exports = function(grunt) {
     }
   });
   grunt.registerTask('default', []);
-  grunt.registerTask('build', ['clean', 'copy', 'jade', 'sass'])
+  grunt.registerTask('build', ['clean', 'copy', 'jade', 'sass']);
+  grunt.registerTask('watch', ['clean', 'copy', 'jade', 'sass']);
 };
