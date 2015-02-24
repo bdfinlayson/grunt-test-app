@@ -38,10 +38,18 @@ module.exports = function (grunt) {
       }
     },
     watch: {
+      other: {
+        files: ['app/**', '!app/**/*.jade', '!app/**/*.{sass,scss}'],
+        tasks: ['copy']
+      },
       jade: {
         files: ['app/**/*.jade'],
         tasks: ['jade']
       },
+      sass: {
+        files: ['app/**/*.{sass,scss}'],
+        tasks: ['sass', 'autoprefixer']
+      }
     },
   });
   grunt.registerTask('default', []);
