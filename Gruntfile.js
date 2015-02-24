@@ -22,6 +22,25 @@ module.exports = function (grunt) {
         ]
       }
     },
+    connect: {
+      options: {
+        port: 8888,
+        open: true,
+        useAvailablePort: true,
+        hostname: 'localhost'
+      },
+      server: {
+        options: {
+          middleware: function (connect) {
+          return [
+            connect.static('public'),
+            connect().use('/scripts', connect.static('./app/scripts')),
+            connect().use('/bower_components', connect.static('./bower_components'))
+            ];
+          }
+        }
+      },
+    },
     jade: {
       compile: {
         options: {
@@ -67,5 +86,5 @@ module.exports = function (grunt) {
   grunt.registerTask('default', []);
   grunt.registerTask('build', ['clean','copy', 'jade', 'sass', 'wiredep']);
   grunt.registerTask('filter', ['autoprefixer']);
-  grunt.registerTask('serve', ['build', 'watch']);
+  grunt.registerTask('serve', ['build', 'connect', 'watch']);
 };
