@@ -1,21 +1,21 @@
 {
-  "name": "grunt-test-app",
+  "name": "MyFirstGruntfile",
   "version": "1.0.0",
-  "description": "This is a grunt test app",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bdfinlayson/grunt-test-app.git"
+    "url": "https://github.com/NSS-Cohort-8/MyFirstGruntfile.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Scott <scott@sscotth.io>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bdfinlayson/grunt-test-app/issues"
+    "url": "https://github.com/NSS-Cohort-8/MyFirstGruntfile/issues"
   },
-  "homepage": "https://github.com/bdfinlayson/grunt-test-app",
+  "homepage": "https://github.com/NSS-Cohort-8/MyFirstGruntfile",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^2.2.0",
